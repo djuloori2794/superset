@@ -470,7 +470,9 @@ class WebDriverSelenium(WebDriverProxy):
             )
         else:
             raise Exception(  # pylint: disable=broad-exception-raised
-                f"Webdriver name ({self._driver_type}) not supported"
+                f"Unsupported WEBDRIVER_TYPE: {self._driver_type!r}. "
+                f"WebDriverSelenium supports 'chrome' and 'firefox'. "
+                f"Set WEBDRIVER_TYPE in superset_config.py to one of these values."
             )
 
         # Add additional arguments from config
