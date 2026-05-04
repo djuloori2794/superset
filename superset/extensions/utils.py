@@ -166,7 +166,11 @@ def get_bundle_files_from_path(base_path: str) -> Generator[BundleFile, None, No
     dist_path = os.path.join(base_path, "dist")
 
     if not os.path.isdir(dist_path):
-        raise Exception("Expected directory %s does not exist." % dist_path)
+        raise Exception(
+            f"Extension build directory not found: {dist_path}. "
+            "Ensure the extension has been built (the 'dist' directory "
+            "must exist under the extension path) before loading."
+        )
 
     for root, _, files in os.walk(dist_path):
         for file in files:
