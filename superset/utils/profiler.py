@@ -49,7 +49,10 @@ class SupersetProfiler:  # pylint: disable=too-few-public-methods
 
         if Profiler is None:
             raise Exception(  # pylint: disable=broad-exception-raised
-                "The module pyinstrument is not installed."
+                "Profiling was requested via `?_instrument=1`, but the optional "
+                "dependency `pyinstrument` is not installed. Install it (e.g. "
+                "`pip install pyinstrument`) and restart the Superset server "
+                "to enable profiling."
             )
 
         profiler = Profiler(interval=self.interval)
