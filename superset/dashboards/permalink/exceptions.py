@@ -24,8 +24,8 @@ class DashboardPermalinkInvalidStateError(CommandException):
 
 
 class DashboardPermalinkCreateFailedError(CreateFailedError):
-    message = _("An error occurred while creating the value.")
+    message = _("An error occurred while creating the permalink.")
 
 
 class DashboardPermalinkGetFailedError(CommandException):
-    message = _("An error occurred while accessing the value.")
+    message = _("An error occurred while accessing the permalink.")
