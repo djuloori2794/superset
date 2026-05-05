@@ -19,7 +19,7 @@ from __future__ import annotations
 from typing import Any
 from urllib import parse
 
-from sqlalchemy.engine.url import make_url, URL  # noqa: F401
+from sqlalchemy.engine.url import URL
 
 from superset.db_engine_specs.base import BaseEngineSpec, DatabaseCategory
 
