@@ -16,7 +16,7 @@
 # under the License.
 
 
-from sqlalchemy.engine.url import make_url, URL  # noqa: F401
+from sqlalchemy.engine.url import make_url
 
 
 # test get schema
