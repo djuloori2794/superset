@@ -156,7 +156,9 @@ def get_query(query_id: int) -> Query:
     try:
         return db.session.query(Query).filter_by(id=query_id).one()
     except Exception as ex:
-        raise SqlLabException("Failed at getting query") from ex
+        raise SqlLabException(
+            f"Failed to retrieve SQL Lab query with id: {query_id}"
+        ) from ex
 
 
 # Default timeouts from config.py:
