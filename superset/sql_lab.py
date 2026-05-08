@@ -485,7 +485,7 @@ def execute_sql_statements(  # noqa: C901
             db.session.commit()
 
         block_count = len(blocks)
-        for i, block in enumerate(blocks):
+        for block_index, block in enumerate(blocks):
             # Check if stopped
             db.session.refresh(query)
             if query.status == QueryStatus.STOPPED:
@@ -495,7 +495,7 @@ def execute_sql_statements(  # noqa: C901
             # Run statement
             msg = __(
                 "Running block %(block_num)s out of %(block_count)s",
-                block_num=i + 1,
+                block_num=block_index + 1,
                 block_count=block_count,
             )
             logger.info("Query %s: %s", str(query_id), msg)
@@ -515,7 +515,7 @@ def execute_sql_statements(  # noqa: C901
                 prefix_message = (
                     __(
                         "Block %(block_num)s out of %(block_count)s",
-                        block_num=i + 1,
+                        block_num=block_index + 1,
                         block_count=block_count,
                     )
                     if block_count > 1
